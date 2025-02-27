@@ -16,26 +16,24 @@ def contains_char(multiple_letter_word: str, single_character: str) -> bool:
 
 
 def emojified(
-    guess: str,
-    secret: str,
+    guess_word: str,
+    secret_word: str,
     WHITE_BOX: str = "\U00002B1C",
     GREEN_BOX: str = "\U0001F7E9",
     YELLOW_BOX: str = "\U0001F7E8",
 ) -> str:
     """Test characters for colors"""
-    assert len(guess) == len(secret)
+    assert len(guess_word) == len(secret_word)
     idx: int = 0
-    while idx < len(guess):
-        if guess[idx] == secret[idx]:
-            return GREEN_BOX * len(guess)
-        elif contains_char == True:
-            return YELLOW_BOX * len(guess)
-    return WHITE_BOX * len(guess)
+    if guess_word[idx] == secret_word [idx]:
+        return GREEN_BOX
+    elif contains_char == True
+        return YELLOW_BOX
+    return WHITE_BOX
 
 
-def input_guess(Word_guess: str, N: int) -> str:
-    print(f"Enter a 5 character word:")
-    if len(Word_guess) != N:
-        print(f"That wasn't {N} chars! Try again:")
-    else:
-        N = N + 1
+def input_guess(N: int) -> str:
+    guess = input(f"Enter a {N} character word:")
+    while len(guess) != N:
+        guess = input(f"That wasn't {N} chars! Try again:")
+    return guess
