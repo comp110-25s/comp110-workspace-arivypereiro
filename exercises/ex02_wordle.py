@@ -33,8 +33,9 @@ def emojified(
     return WHITE_BOX * len(guess)
 
 
-def input_guess(N: int) -> str:
-    print(f"Enter a 5 character word")
-    guess_length: int = 5
-    if N != guess_length:
+def input_guess(Word_guess: str, N: int) -> str:
+    print(f"Enter a 5 character word:")
+    if len(Word_guess) != N:
         print(f"That wasn't {N} chars! Try again:")
+    else:
+        N = N + 1
