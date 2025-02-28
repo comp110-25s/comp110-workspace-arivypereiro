@@ -17,12 +17,12 @@ def contains_char(multiple_letter_word: str, single_character: str) -> bool:
 
 def emojified(guess_word: str, secret_word: str) -> str:
     """Test characters for colors"""
-    WHITE_BOX: str = "\U00002B1C"
-    GREEN_BOX: str = "\U0001F7E9"
-    YELLOW_BOX: str = "\U0001F7E8"
     assert len(guess_word) == len(
         secret_word
     ), "Guess must be the same length as secret"
+    WHITE_BOX: str = "\U00002B1C"
+    GREEN_BOX: str = "\U0001F7E9"
+    YELLOW_BOX: str = "\U0001F7E8"
     idx: int = 0
     full_word: str = ""
     while idx < len(guess_word):
@@ -48,18 +48,16 @@ def input_guess(N: int) -> str:
 def main(secret: str) -> None:
     """The entrypoint of the program and main game loop."""
     current_turn: int = 1
-    word_length: int = 5
-    right_guess: bool = False
+    input_length: int = len(secret)
     while current_turn < 6:
         print(f"=== Turn{current_turn}/6 ===")
-        guess_here = input_guess(N=word_length)
+        guess_here = input_guess(N=input_length)
         print(emojified(secret_word=secret, guess_word=guess_here))
         current_turn += 1
         if secret == guess_here:
-            print(f"You won in {current_turn} turns!")
-            right_guess = True
-    if right_guess is False:
-        print(f"X/6 - Sorry, try again tomorrow!")
+            return print(f"You won in {current_turn-1}/6 turns!")
+    if secret != guess_here:
+        return print("X/6 - Sorry, try again tomorrow!")
 
 
 if __name__ == "__main__":
