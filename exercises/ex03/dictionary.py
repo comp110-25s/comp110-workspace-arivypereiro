@@ -2,4 +2,4 @@
 
 __author__ = "730671996"
 
-my_dictionary: dict[str, str] = {"first": "second", "third": "fourth"}
+my_dictionary: dict[str, str] = {}
