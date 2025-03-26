@@ -31,13 +31,12 @@ def favorite_color(color_dictionary: dict[str, str]) -> str:
             number_of_favorite += 1
             return color_dictionary[key]
 
-def bin_len(bin_list:list[str]) -> dict[int,set[str]]:
-    bins = dict[int,set[str]] = {}
+
+def bin_len(bin_list: list[str]) -> dict[int, set[str]]:
+    bins = dict[int, set[str]] = {}
     for b in bin_list:
-        if len(b) is in bins:
+        if len(b) in bins:
             bins[len(b)] += 1
         else:
             bins[len(b)] = 1
     return bins
-
-
