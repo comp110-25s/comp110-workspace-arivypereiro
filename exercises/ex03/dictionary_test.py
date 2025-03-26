@@ -1,7 +1,7 @@
 __author__ = "730671996"
 
 import pytest
-from dictionary import invert
+from dictionary import invert, favorite_color, count, bin_len
 
 
 def invert_test_error() -> None:
@@ -20,16 +20,10 @@ def invert_test_empty() -> None:
     assert invert({}) == {}
 
 
-from dictionary import count
-
-
 def test_count_key() -> None:
     """Testing if key is a unique value"""
     with pytest.raises(KeyError):
-        count({"a", "a", "bb"})
-
-
-from dictionary import favorite_color
+        count(["a", "a", "bb"])
 
 
 def test_same_favorite_color() -> None:
@@ -55,9 +49,6 @@ def test_tie_favorite_color() -> None:
         )
         == "purple"
     )
-
-
-from dictionary import bin_len
 
 
 def test_bins_correctly() -> None:
