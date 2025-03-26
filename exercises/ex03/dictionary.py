@@ -26,10 +26,12 @@ def count(strs: list[str]) -> dict[str, int]:
 def favorite_color(color_dictionary: dict[str, str]) -> str:
     favorites: dict[str, str] = {}
     for key in color_dictionary:
-        number_of_favorite = 0
+        color = color_dictionary[key]
         if color_dictionary[key] in favorites:
             number_of_favorite += 1
-            return color_dictionary[key]
+        else:
+            number_of_favorite = 0
+        return color_dictionary[key]
 
 
 def bin_len(bin_list: list[str]) -> dict[int, set[str]]:
