@@ -25,12 +25,13 @@ def count(strs: list[str]) -> dict[str, int]:
 
 def favorite_color(color_dictionary: dict[str, str]) -> str:
     favorites: dict[str, str] = {}
+    color_frequency = str
     for key in color_dictionary:
-        color = color_dictionary[key]
-        if color_dictionary[key] in favorites:
-            number_of_favorite += 1
+        color_frequency = color_dictionary[key]
+        if color_frequency in favorites:
+            favorites[color_frequency] += 1
         else:
-            number_of_favorite = 0
+            favorites[color_frequency] = 0
         return color_dictionary[key]
 
 
