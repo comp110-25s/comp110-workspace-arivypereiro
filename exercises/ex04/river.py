@@ -40,19 +40,17 @@ class River:
 
     def remove_fish(self, amount: int):
         """Removing a certain amount of fish."""
-        fish_list: list[Fish] = self.fish
-        for fish in self.fish:
-            fish_list.pop(0)
+        while amount > 0:
+            self.fish.pop(0)
+            amount -= 1
         return None
 
     def bears_eating(self):
         """Determining amount of fish bear eats based on number of fish."""
-        for bears in self.bears:
+        for bear in self.bears:
             if len(self.fish) >= 5:
-                bears.eat(3)
+                bear.eat(3)
                 self.remove_fish(3)
-            else:
-                bears.eat(0)
         return None
 
     def check_hunger(self):
@@ -66,12 +64,9 @@ class River:
 
     def repopulate_fish(self):
         """Checking for reproduction in Fish class."""
-        fish_list: list[Fish] = self.fish
-        for fish in self.fish:
-            if len(self.fish) % 2 == 0:
-                num_offspring: int = (len(self.fish) // 2) * 4
-                for _ in range(0, num_offspring):
-                    fish_list.append(fish)
+        num_offspring: int = (len(self.fish) // 2) * 4
+        while num_offspring > 0:
+            self.fish.append(Fish())
         return None
 
     def repopulate_bears(self):
